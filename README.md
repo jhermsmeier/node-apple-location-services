@@ -21,6 +21,29 @@ $ npm install --save apple-location-services
 var LocationServices = require( 'apple-location-services' )
 ```
 
+## Example
+
+```
+$ node example/locate.js
+```
+
+```
+Scanning for WiFi networks...
+Detected 20 networks
+Querying Apple Location Services...
+Received 113 results
+Filtered out 11 networks without location data
+Filtered out 98 undetected networks
+Generated trilateration matrix:
+
+[ [ 1341663988, 5249087264, 4321101938.317972 ],
+  [ 1341674818, 5249084620, 2262340095.8832603 ],
+  [ 1341665645, 5249086654, 1789211062.113776 ],
+  [ 1341636641, 5249097645, 5694164319.598579 ] ]
+
+Position (lat, lon): [ 52.49086179333333, 13.416681503333333 ]
+```
+
 ## References
 
 - [Reverse Engineering Apple Location Services](https://appelsiini.net/2017/reverse-engineering-location-services/)
