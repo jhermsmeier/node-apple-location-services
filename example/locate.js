@@ -74,8 +74,15 @@ wifi.scan( function( error, networks ) {
     })
 
     console.info( 'Generated trilateration matrix:' )
-    console.info( '' )
-    inspect.print( input )
+
+    function entry( row ) {
+      return `  ${ row[0] / 1e8 } | ${ row[1] / 1e8 } | ${ (row[2] / 1e8).toFixed(1) }`
+    }
+
+    console.log(`
+  lat         | lon         | estimated distance (m)
+ -------------|-------------|-----------------------
+${input.map(entry).join('\n')}`)
 
     var position = trilat( input )
 
