@@ -1,14 +1,18 @@
-var util = require( 'util' )
-var os = require( 'os' )
-var options = { depth: null, colors: process.stdin.isTTY }
+import util from 'util'
+import os from 'os'
 
-function inspect( value ) {
-  return util.inspect( value, options )
+const options = {
+  depth: null,
+  colors: process.stdin.isTTY
 }
 
-inspect.print = function( value ) {
-  process.stdout.write( inspect( value ) )
-  process.stdout.write( os.EOL )
+function inspect (value) {
+  return util.inspect(value, options)
 }
 
-module.exports = inspect
+inspect.print = function (value) {
+  process.stdout.write(inspect(value))
+  process.stdout.write(os.EOL)
+}
+
+export default inspect

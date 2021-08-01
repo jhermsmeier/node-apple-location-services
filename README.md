@@ -18,7 +18,7 @@ $ npm install --save apple-location-services
 ## Usage
 
 ```js
-var LocationServices = require( 'apple-location-services' )
+import LocationServices from 'apple-location-services'
 ```
 
 ## Example
